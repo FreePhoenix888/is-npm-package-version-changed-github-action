@@ -1,6 +1,6 @@
 name: 'Check if Version is Changed'
 description: 'Check if the version in package.json is updated from npm'
-icon: eye
+icon: 'eye'
 inputs: {}
 outputs:
   is-version-changed:
