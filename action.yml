@@ -1,0 +1,10 @@
+name: 'Check if Version is Changed'
+description: 'Check if the version in package.json is updated from npm'
+inputs: {}
+outputs:
+  is-version-changed:
+    description: 'True if version is changed, false otherwise'
+    value: ${{ steps.check-is-version-updated.outputs.is-version-changed }}
+runs:
+  using: 'node18'
+  main: 'index.js'
