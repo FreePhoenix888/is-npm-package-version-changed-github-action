@@ -1,6 +1,8 @@
 name: 'Check if Version is Changed'
 description: 'Check if the version in package.json is updated from npm'
-icon: 'eye'
+branding:
+  icon: 'award'
+  color: 'blue'
 inputs: {}
 outputs:
   is-version-changed:
