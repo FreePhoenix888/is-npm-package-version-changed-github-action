@@ -1,0 +1,17 @@
+{
+  "name": "check-if-version-is-updated",
+  "version": "1.0.0",
+  "description": "Check if the version in package.json is updated from npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@actions/exec": "^1.1.0",
+    "@actions/github": "^5.0.0"
+  }
+}
