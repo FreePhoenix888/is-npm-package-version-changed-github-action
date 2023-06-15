@@ -9,5 +9,5 @@ outputs:
     description: 'True if version is changed, false otherwise'
     value: ${{ steps.check-is-version-updated.outputs.is-version-changed }}
 runs:
-  using: 'node18'
+  using: 'node16'
   main: 'index.js'
