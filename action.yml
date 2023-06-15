@@ -1,5 +1,5 @@
-name: 'Check if Version is Changed'
-description: 'Check if the version in package.json is updated from npm'
+name: 'Check if npm package version is changed compared to versio in npm registry'
+description: 'Check if npm package version is changed compared to versio in npm registry'
 branding:
   icon: 'award'
   color: 'blue'
