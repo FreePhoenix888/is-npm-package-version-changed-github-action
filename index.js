@@ -8,7 +8,7 @@ async function run() {
     const packageName = packageJson.name;
     const currentPackageVersion = packageJson.version;
 
-    const { stdout: npmPackageVersion } = await execa.command(`npm view ${packageName} version`);
+    const { stdout: npmPackageVersion } = await execa(`npm`, [`view`,packageName, `version`]);
 
     const isVersionChanged = currentPackageVersion !== npmPackageVersion.trim();
     core.setOutput('is-version-changed', isVersionChanged.toString());
