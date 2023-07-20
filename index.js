@@ -1,5 +1,5 @@
 import core from '@actions/core';
-import execa from 'execa';
+import {execa} from 'execa';
 import fsExtra from 'fs-extra';
 
 async function run() {
