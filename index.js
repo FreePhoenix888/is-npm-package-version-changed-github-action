@@ -1,6 +1,6 @@
-const core = require('@actions/core');
-const execa = require('execa');
-const fsExtra = require('fs-extra');
+import core from '@actions/core';
+import execa from 'execa';
+import fsExtra from 'fs-extra';
 
 async function run() {
   try {
