@@ -1,15 +1,16 @@
 const core = require('@actions/core');
-const exec = require('@actions/exec');
-const github = require('@actions/github');
+const execa = require('execa');
+const fsExtra = require('fs-extra');
 
 async function run() {
   try {
-    let currentPackageVersion;
-    let npmPackageVersion;
-    await exec.exec('node -p "require(\'./package.json\').version"', [], { listeners: { stdout: (data) => { currentPackageVersion = data.toString().trim(); }}});
-    await exec.exec(`npm view @${github.context.repo.owner}/${github.context.repo.repo} version`, [], { listeners: { stdout: (data) => { npmPackageVersion = data.toString().trim(); }}});
+    const packageJson = fsExtra.readJsonSync('./package.json');
+    const packageName = packageJson.name;
+    const currentPackageVersion = packageJson.version;
 
-    const isVersionChanged = currentPackageVersion !== npmPackageVersion;
+    const { stdout: npmPackageVersion } = await execa.command(`npm view ${packageName} version`);
+
+    const isVersionChanged = currentPackageVersion !== npmPackageVersion.trim();
     core.setOutput('is-version-changed', isVersionChanged.toString());
   } catch (error) {
     core.setFailed(error.message);
