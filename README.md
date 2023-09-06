@@ -1,4 +1,4 @@
-This github action checks whether your current package version and package version from npm diffenrt
+This github action checks whether your current package version is newer than the latest version on npm
 
 # Using
 ```

@@ -1,7 +1,7 @@
 {
   "name": "is-npm-package-version-changed",
   "version": "1.0.0",
-  "description": "This github action checks whether your current package version and package version from npm diffenrt",
+  "description": "This github action checks whether your current package version is newer than the latest version on npm",
   "main": "index.js",
   "type": "module",
   "scripts": {
